@@ -7,11 +7,20 @@ import * as serviceWorker from './serviceWorker';
 
 import Navigation from './component/navigation/navigation'
 import AppBar from './component/app-bar/app-bar'
+import Camera from './component/camera/camera'
 
 class App extends Component {
     render() {
         return (
             <Switch>
+
+                <Route exact path="/camera" render={() => (
+                    <div>
+                        <AppBar/>
+                        <Camera/>
+                        <Navigation/>
+                    </div>
+                )}/>
                 <Route exact path="/" render={() => (
                     <div>
                         <AppBar/>

@@ -2,10 +2,13 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import RestoreIcon from '@material-ui/icons/FormatListNumbered';
+import Ranking from '@material-ui/icons/FormatListNumbered';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import LocationOnIcon from '@material-ui/icons/AccountCircle';
-import CameraIcon from '@material-ui/icons/CameraAlt'
+import Profile from '@material-ui/icons/AccountCircle';
+import CameraIcon from '@material-ui/icons/CameraAlt';
+import '../../css/normalizer.css'
+
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles({
   root: {
@@ -22,11 +25,13 @@ export default function LabelBottomNavigation() {
   }
 
   return (
-    <BottomNavigation value={value} onChange={handleChange} className={classes.root}>
-      <BottomNavigationAction label="Recents" value="recents" icon={<RestoreIcon />} />
+    <BottomNavigation value={value} onChange={handleChange} className={`navigation ${classes.root}`}>
+      <BottomNavigationAction label="رتبه" value="recents" icon={<Ranking />} />
       <BottomNavigationAction label="Favorites" value="favorites" icon={<FavoriteIcon />} />
-      <BottomNavigationAction label="Nearby" value="nearby" icon={<LocationOnIcon />} />
-      <BottomNavigationAction label="Folder" value="folder" icon={<CameraIcon />} />
+      <BottomNavigationAction label="پروفایل" value="nearby" icon={<Profile />} />
+      <Link to='/camera'>
+        <BottomNavigationAction label="دوربین" value="folder" icon={<CameraIcon />} />
+      </Link>
     </BottomNavigation>
   );
 }
