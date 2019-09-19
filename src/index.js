@@ -5,9 +5,9 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import * as serviceWorker from './serviceWorker';
 
-import Navigation from './component/navigation/navigation'
-import AppBar from './component/app-bar/app-bar'
-import Camera from './component/camera/camera'
+import Navigation from './components/navigation/navigation'
+import AppBar from './components/app-bar/app-bar'
+import Camera from './components/camera/camera'
 
 class App extends Component {
     render() {
